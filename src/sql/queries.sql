@@ -15,14 +15,19 @@
 -- directly below the corresponding instruction
 -- -----------------------------------------------
 
-SELECT * FROM regions;
-SELECT * FROM species;
-SELECT * FROM climate;
-SELECT * FROM observations;
+--SELECT * FROM regions;
+--SELECT * FROM species;
+--SELECT * FROM climate;
+--SELECT * FROM observations;
 
 
 -- MISSION 1
 -- Your query here;
+SELECT * FROM observations limit 10;
+SELECT DISTINCT region_id FROM observations;
+SELECT count(DISTINCT species_id) FROM observations;
+SELECT count(*)  FROM observations WHERE region_id = 2;
+SELECT count(*)  FROM observations WHERE observation_date='1998-08-08';
 
 -- MISSION 2
 -- Your query here;
