@@ -57,7 +57,25 @@ order by count(*) desc
 
 -- MISSION 4
 -- Your query here;
+INSERT INTO observations (species_id, region_id, observer, observation_date, latitude, longitude, count) 
+VALUES (100, 25, 'Test_dbg', '2001-07-04', -31.54646, 152.8572, 1);
 
+--inserto una nueva observacion que será la que eliminare en el ultimo ejercicio
+INSERT INTO observations (species_id, region_id, observer, observation_date, latitude, longitude, count) 
+VALUES (1000, 25, 'Test_dbg', '2001-06-10', -31.54646, 152.8572, 1);
+
+
+UPDATE species
+SET scientific_name = 'Panthera onca'
+WHERE scientific_name = 'Panthera oncca';
+
+
+--SELECT * 
+--FROM observations 
+--where species_id = 1000
+
+DELETE FROM observations
+WHERE id = 502; 
 
 -- MISSION 5
 -- Your query here;
