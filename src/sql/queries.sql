@@ -31,11 +31,29 @@ SELECT count(*)  FROM observations WHERE observation_date='1998-08-08';
 
 -- MISSION 2
 -- Your query here;
+SELECT region_id, count(*) FROM observations Group by region_id order by count(*) desc limit 1;
+SELECT species_id, count(*) FROM observations Group by species_id order by count(*) desc limit 5;
+SELECT species_id, count(*) FROM observations Group by species_id having count(*)< 5;
+SELECT observer, count(*) FROM observations Group by observer order by count(*) desc;
 
 
 -- MISSION 3
 -- Your query here;
+SELECT * 
+FROM observations as obs
+JOIN regions as reg on obs.region_id = reg.id;
 
+SELECT *
+FROM observations as obs
+JOIN species as spe on obs.species_id = spe.id;
+
+
+SELECT obs.region_id, spe.scientific_name, count(*) as cuenta
+FROM observations as obs
+JOIN species as spe on obs.species_id = spe.id
+Group by obs.region_id, spe.scientific_name
+order by count(*) desc
+;
 
 -- MISSION 4
 -- Your query here;
